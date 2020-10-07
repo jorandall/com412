@@ -27,8 +27,12 @@ class LinkedList:
       self.last.link(newNode)
 
 
+<<<<<<< HEAD
   def get(self, index):
   
+=======
+def get(self, index):
+  pass
   
   def __str__(self):
     return self.__str__()
