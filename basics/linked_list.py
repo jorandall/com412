@@ -27,7 +27,7 @@ class LinkedList:
       self.last.link(newNode)
 
 
-def get(self, index):
+  def get(self, index):
   
   
   def __str__(self):
