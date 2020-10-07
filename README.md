@@ -1,2 +1,2 @@
 # com412
-University work for COM412 - Data Structures, Algorithms &amp; Mathematics
+University work for COM421 - Data Structures, Algorithms &amp; Mathematics
