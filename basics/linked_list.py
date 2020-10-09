@@ -1,55 +1,82 @@
 # Nodes for in the Linked List
 class Node:
+
+  # Initialise the new node
   def __init__(self, data):
     self.data = data
     self.prev = None
     self.next = None
   
-  def link(self, otherNode):
-    self.next = otherNode
-    otherNode.prev = self
+  # Create link between nodes
+  def link(self, other_node):
+    self.next = other_node
+    other_node.prev = self
 
   def __str__(self):
     return self.data.__str__()
 
-# Linked List itself
-class LinkedList:
+
+# Create the Linked List
+class Linked_list:
+
+  # Initialise the new list
   def __init__(self):
     self.first = None
     self.last = None
 
-  def add(self, newNode):
-    self.last = newNode
-    
-    if (self.first is None):
-      self.first = newNode
+  # Define adding a new node method
+  def add_node(self, data):
+    new_node = Node(data)
+
+    # Check to see if there is any nodes in the list, if not create at beginning
+    if self.last == None:
+      self.first = new_node
     else:
-      self.last.link(newNode)
+      self.last.link(new_node)
+
+    self.last = new_node
+ 
+  # Define retrieving nodes method 
+  def get_node(self, index):
+    # Check to see if any nodes within list and print message if not
+    if self.first == None:
+      print("List is empty.")
+      return
+    
+    current_node = self.first
+    current_index = 0
+
+    # Check to see if node requested is within the limits of the Linked List
+    if current_node.next == None:
+      print("Index out of bounds.")
+      return
+
+    # Check each node until it matches the node called
+    while (current_index < index) and (current_node is not None):
+      current_node = current_node.next
+      current_index +=1
+      
+    if current_node is None:
+      raise Exception("Cannot find item requested.")
+
+    return current_node
 
 
-<<<<<<< HEAD
-  def get(self, index):
+
+# Main Progam
+
+llist = Linked_list()
+
+# Add nodes to list
+llist.add_node("spam")
+llist.add_node("eggs")
+llist.add_node("bacon")
+
+try: 
+  print(llist.get_node(0))
+  print(llist.get_node(1))
+  print(llist.get_node(2))
+  print(llist.get_node(10))
+except Exception as e:
+  print(e)
   
-=======
-def get(self, index):
-  pass
-  
-  def __str__(self):
-    return self.__str__()
-
-
-n1 = Node("Fred")
-n2 = Node("Tom")
-n3 = Node("Harry")
-
-print(n1)
-print(n2)
-
-n1.link(n2)
-n2.link(n3)
-
-print(n1.next)
-print(n1.prev)
-print(n2.next)
-print(n2.prev)
-
