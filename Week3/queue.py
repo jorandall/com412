@@ -15,8 +15,8 @@ class Queue:
    
     # If not, work out the next available space and add new item
     else:
-      avail = (self.front + self.size) % len(self.internalArray)
-      self.internalArray[avail] = item
+      self.back = (self.front + self.size) % len(self.internalArray)
+      self.internalArray[self.back] = item
       self.size += 1
       print(item, "added to queue.")
 
@@ -36,8 +36,7 @@ class Queue:
  
   def __str__(self):
     return self.internalArray.__str__()
-    return self.internalArray[self.front]
-    return self.internalArray[self.back]
+
 
 queue1 = Queue(2)
 
