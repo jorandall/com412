@@ -27,7 +27,7 @@ class Queue:
     if self.size == 0:
       print("Queue Empty.")
     
-    # If not, work out the front of the work and remove item
+    # If not, work out the front of the queue and remove item
     else:
       item = self.internalArray[self.front]
       self.front = (self.front + 1) % len(self.internalArray)
