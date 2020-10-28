@@ -25,7 +25,7 @@ class Hashtable:
 
 # Find an item in the hashtable
   def get(self, key):
-    hashCode = self.hash(key)
+    hashCode = self.hash(key) # Call the hash method for hashcode
 
     bucket = self.array[hashCode]
 
