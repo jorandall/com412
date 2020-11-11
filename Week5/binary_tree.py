@@ -26,7 +26,6 @@ class TreeNode:
         self.right.insert_node(value)  
 
 
-
 # Define Tree class
 class BinaryTree:
   def __init__(self):
