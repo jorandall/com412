@@ -5,7 +5,6 @@ import sys
 class Node:
   def __init__(self, name):
     self.dist = sys.maxsize
-    self.data = (self.dist, self)
     self.name = name
     self.parent = None
     self.to_check = True
@@ -116,6 +115,7 @@ route = graph.dijkstra(london, munich)
 print("Route:")
 for node in route:
   print("   {}".format(node.name))
+  print("--->")
 
 print("")
 print("Total distance: {}".format(route[-1].dist))
